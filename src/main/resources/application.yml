@@ -1,0 +1,10 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  #datasource:
+  #  driver-lass-name: org.sqliter.JDBC
+  #  url:
+        
+
