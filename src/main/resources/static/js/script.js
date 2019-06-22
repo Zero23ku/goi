@@ -8,12 +8,14 @@ $(document).ready(() =>{
 
 $("#again").click((e) =>{
     e.preventDefault();
-    const $send = $("#send"),
-          $again = $("#again");
+    const $send = $("#sendContent"),
+          $again = $("#againContent"),
+          $kaitou = $("#kaitou");
     $.get("/goi",(data)=>{
         $("#goi").text("Palabra: " + data.goi);
         $send.show();
         $again.hide();
+        $kaitou.val("");
     }).fail(()=>{
         alert("Error :(");
     });
@@ -23,8 +25,8 @@ $("#send").click((e) => {
     e.preventDefault();
     const $goi = $("#goi"),
           $kaitou = $("#kaitou"),
-          $send = $("#send"),
-          $again = $("#again"),
+          $send = $("#sendContent"),
+          $again = $("#againContent"),
           url = "goi/" + $goi.text().split(":")[1].replace(" ","") + "/kaitou/" + $kaitou.val();
     if($kaitou.val() != null && $kaitou.val() != ""){
         $.get(url,(data)=>{
