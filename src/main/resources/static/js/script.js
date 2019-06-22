@@ -29,11 +29,19 @@ $("#send").click((e) => {
           $send = $("#sendContent"),
           $again = $("#againContent"),
           url = "goi/" + $goi.text().split(":")[1].replace(" ","") + "/kaitou/" + $kaitou.val();
+    let msg = "";
     if($kaitou.val() != null && $kaitou.val() != ""){
         $.get(url,(data)=>{
             $send.hide();
             $kaitou.prop('disabled',true);
-            alert(data.meaningResult);
+            
+            if(data.meaningResult === "×"){
+                msg = "La(s) respuesta(s) correcta(s): "
+                $.each(data.answers.split("-"), (i,v) => {
+                    msg += v + " ";
+                });
+            }
+            alert(data.meaningResult + "\n msg");
             $again.show();
         }).fail(()=>{
             alert("Error al obtener la respuesta :(")
@@ -45,7 +53,8 @@ $("#send").click((e) => {
 });
 
 $("#kaitou").keypress((e) =>{
-    const regex = /^[a-zA-ZñÑáíúéóÁÍÚÉÓ ]*$/,
+    //const regex = /^[a-zA-ZñÑáíúéóÁÍÚÉÓ ]*$/,
+    const regex = /^[a-zA-ZñÑ　]*$/,
           $kaitou = $("#kaitou");
     let isValid = regex.test(e.key);
     if(!isValid){

@@ -44,6 +44,11 @@ public class GoiController{
         meaning.put("word",decodedGoi);
         if(!isCorrect){
             meaning.put("meaningResult","×");
+            String correctAnswers = "";
+            for (String ele : mWord) {
+                correctAnswers += ele + "-";
+            }
+            meaning.put("answers",correctAnswers);
         }
         return meaning;
     }
