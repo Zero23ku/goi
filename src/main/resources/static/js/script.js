@@ -4,6 +4,8 @@ $(document).ready(() =>{
     }).fail(()=>{
         alert("Error :(");
     });
+    $("#maru").prop("volume",0.5);
+    $("#batsu").prop("volume",0.5);
 });
 
 $("#again").click((e) =>{
