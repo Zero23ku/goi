@@ -43,13 +43,13 @@ $("#send").click((e) => {
                     msg += v + " ";
                 });
                 try{
-                    $maru.play();
+                    $batsu.play();
                 }catch(e){
                     console.log(e);
                 }
             }else if(data.meaningResult === "○"){
                 try{
-                    $batsu.play();
+                    $maru.play();
                 }catch(e){
                     console.log(e);
                 }
