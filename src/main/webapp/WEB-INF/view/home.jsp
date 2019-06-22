@@ -29,9 +29,13 @@
                 </div>
             </div>
             <br>
-            <div class="row justify-content-md-center text-center">
+            <div id="sendContent" class="row justify-content-md-center text-center">
                 <div class="col">
                     <button id="send" type="button" class="btn btn-success">Responder</button>
+                </div>
+            </div>
+            <div id="againContent" class="row justify-content-md-center text-center">
+                <div class="col">
                     <button id="again" type="button" class="btn btn-info">Siguiente Palabra</button>
                 </div>
             </div>
