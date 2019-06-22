@@ -10,7 +10,7 @@ $("#send").click((e) => {
     e.preventDefault();
     const $goi = $("#goi"),
           $kaitou = $("#kaitou"),
-          url = "goi/" + $goi.text() + "/kaitou/" + $kaitou.val();
+          url = "goi/" + $goi.text().split(":")[1].replace(" ","") + "/kaitou/" + $kaitou.val();
     if($kaitou.val() != null && $kaitou.val() != ""){
         $.get(url,(data)=>{
             alert(data.meaningResult);

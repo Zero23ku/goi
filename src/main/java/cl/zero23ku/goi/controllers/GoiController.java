@@ -1,5 +1,6 @@
 package cl.zero23ku.goi.controllers;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,10 +28,12 @@ public class GoiController{
     }
 
     @GetMapping("/goi/{goi}/kaitou/{kaitou}")
-    public Map<String,String> checkMeaning(@PathVariable String goi, @PathVariable String kaitou){
+    public Map<String,String> checkMeaning(@PathVariable String goi, @PathVariable String kaitou) throws Exception{
         Map<String,String> meaning = new HashMap<>();
-        String mWord = this.goiService.getJPWordMeaning(kaitou);
-        meaning.put("word",goi);
+        String decodedGoi = java.net.URLDecoder.decode(goi, "UTF-8");
+        String mWord = this.goiService.getJPWordMeaning(decodedGoi);
+    
+        meaning.put("word",decodedGoi);
         meaning.put("meaningResult",mWord.equalsIgnoreCase(kaitou) ? "○":"×");
         return meaning;
     }
