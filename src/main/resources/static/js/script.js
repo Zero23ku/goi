@@ -48,6 +48,7 @@ $("#send").click((e) => {
                     console.log(e);
                 }
             }else if(data.meaningResult === "○"){
+                msg = "¡Respuesta Correcta!";
                 try{
                     $maru.play();
                 }catch(e){
