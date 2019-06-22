@@ -44,7 +44,7 @@
             </div>
             <div id="againContent" class="row justify-content-md-center text-center">
                 <div class="col">
-                    <button id="again" type="button" class="btn btn-info">Siguiente Palabra</button>
+                    <button id="again" type="button" class="btn btn-info" disabled>Siguiente Palabra</button>
                 </div>
             </div>
             <br>

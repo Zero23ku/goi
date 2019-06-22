@@ -8,9 +8,14 @@ $(document).ready(() =>{
 
 $("#again").click((e) =>{
     e.preventDefault();
+
     const $send = $("#sendContent"),
           $again = $("#againContent"),
-          $kaitou = $("#kaitou");
+          $kaitou = $("#kaitou"),
+          $againButton = $("#again"),
+          $sendButton = $("#send");
+    $sendButton.prop('disabled',false); 
+    $againButton.prop('disabled',true);
     $.get("/goi",(data)=>{
         $("#goi").text("Palabra: " + data.goi);
         $send.show();
@@ -30,8 +35,11 @@ $("#send").click((e) => {
           $again = $("#againContent"),
           $maru = $("#maru")[0],
           $batsu = $("#batsu")[0],
+          $againButton = $("#again"),
+          $sendButton = $("#send"),
           url = "goi/" + $goi.text().split(":")[1].replace(" ","") + "/kaitou/" + $kaitou.val();
     let msg = "";
+    $send.prop('disabled',true);
     if($kaitou.val() != null && $kaitou.val() != ""){
         $.get(url,(data)=>{
             $send.hide();
@@ -60,6 +68,8 @@ $("#send").click((e) => {
             $again.show();
         }).fail(()=>{
             alert("Error al obtener la respuesta :(")
+        }).always(()=>{
+            $againButton.prop('disabled',false);
         });
     }else{
         $kaitou.addClass("is-invalid");
