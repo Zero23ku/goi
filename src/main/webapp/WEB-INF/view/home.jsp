@@ -32,7 +32,7 @@
             <div class="row justify-content-md-center text-center">
                 <div class="col">
                     <button id="send" type="button" class="btn btn-success">Responder</button>
-                    <button id=="again" type="button" class="btn btn-info">Siguiente Palabra</button>
+                    <button id="again" type="button" class="btn btn-info">Siguiente Palabra</button>
                 </div>
             </div>
             <br>
