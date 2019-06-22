@@ -28,6 +28,8 @@ $("#send").click((e) => {
           $kaitou = $("#kaitou"),
           $send = $("#sendContent"),
           $again = $("#againContent"),
+          $maru = $("#maru"),
+          $batsu = $("#batsu"),
           url = "goi/" + $goi.text().split(":")[1].replace(" ","") + "/kaitou/" + $kaitou.val();
     let msg = "";
     if($kaitou.val() != null && $kaitou.val() != ""){
@@ -40,6 +42,9 @@ $("#send").click((e) => {
                 $.each(data.answers.split("-"), (i,v) => {
                     msg += v + " ";
                 });
+                $maru.play();
+            }else if(data.meaningResult === "○"){
+                $batsu.play();
             }
             alert(data.meaningResult + "\n " + msg);
             $again.show();

@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="site">
+    <!--audio-->
+    <audio id="maru">
+        <source src="sounds/maru.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="batsu">
+        <source src="sounds/batsu.mp3" type="audio/mpeg">
+    </audio>
+
     <!--Input-->
     <main class="site-content">
         <div class="container">
