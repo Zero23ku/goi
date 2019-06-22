@@ -19,6 +19,7 @@ $("#send").click((e) => {
         });
     }else{
         $kaitou.addClass("is-invalid");
+        $kaitou.effect("shake");
     }
 });
 
