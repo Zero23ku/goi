@@ -16,6 +16,7 @@ $("#again").click((e) =>{
         $send.show();
         $again.hide();
         $kaitou.val("");
+        $kaitou.prop('disabled',false);
     }).fail(()=>{
         alert("Error :(");
     });
@@ -31,6 +32,7 @@ $("#send").click((e) => {
     if($kaitou.val() != null && $kaitou.val() != ""){
         $.get(url,(data)=>{
             $send.hide();
+            $kaitou.prop('disabled',true);
             alert(data.meaningResult);
             $again.show();
         }).fail(()=>{
