@@ -4,7 +4,7 @@ spring:
       prefix: /WEB-INF/view/
       suffix: .jsp
   datasource:
-    driver-lass-name: com.mysql.cj.jdbc.Driver
+    driver-lass-name: com.mysql.jdbc.Driver
     url: ${JAWSDB_MARIA_URL}
     username: ${JAWSDB_MARIA_USER}
     password: ${JAWSDB_MARIA_PASS}
