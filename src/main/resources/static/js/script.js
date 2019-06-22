@@ -41,7 +41,7 @@ $("#send").click((e) => {
                     msg += v + " ";
                 });
             }
-            alert(data.meaningResult + "\n msg");
+            alert(data.meaningResult + "\n " + msg);
             $again.show();
         }).fail(()=>{
             alert("Error al obtener la respuesta :(")
