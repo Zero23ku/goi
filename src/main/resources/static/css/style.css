@@ -4,14 +4,36 @@ body{
     font-size:13px;
 }
 
-.footer{
-    padding-bottom: 1rem !important;
-}
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+.site-content {
+    flex: 1;
+  }
 
 .is-invalid{
     border-width: thick;
 }
 
-#buttonContainer{
-    text-align: center;
+.footer .container{
+    padding-bottom:10px;
 }
+
+#goiContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#Instructions{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ol li{
+    margin-bottom: 10px;
+}
+

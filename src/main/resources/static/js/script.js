@@ -1,6 +1,6 @@
 $(document).ready(() =>{
     $.get("/goi",(data)=>{
-        $("#goi").text(data.goi);
+        $("#goi").text("Palabra: " + data.goi);
     }).fail(()=>{
         alert("Error :(");
     });
@@ -8,7 +8,6 @@ $(document).ready(() =>{
 
 $("#send").click((e) => {
     e.preventDefault();
-
     const $goi = $("#goi"),
           $kaitou = $("#kaitou"),
           url = "goi/" + $goi.text() + "/kaitou/" + $kaitou.val();
