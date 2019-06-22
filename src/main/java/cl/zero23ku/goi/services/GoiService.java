@@ -1,5 +1,7 @@
 package cl.zero23ku.goi.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import cl.zero23ku.goi.dao.WordsMapper;
@@ -17,7 +19,7 @@ public class GoiService{
         return this.wordsMapper.getRandomWord();
     }
 
-    public String getJPWordMeaning(String jp){
+    public List<String> getJPWordMeaning(String jp){
         return this.wordsMapper.getJPWordMeaning(jp);
     }
 }

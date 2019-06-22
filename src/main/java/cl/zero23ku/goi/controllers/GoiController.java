@@ -2,6 +2,7 @@ package cl.zero23ku.goi.controllers;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,10 +32,19 @@ public class GoiController{
     public Map<String,String> checkMeaning(@PathVariable String goi, @PathVariable String kaitou) throws Exception{
         Map<String,String> meaning = new HashMap<>();
         String decodedGoi = java.net.URLDecoder.decode(goi, "UTF-8");
-        String mWord = this.goiService.getJPWordMeaning(decodedGoi);
-    
+        List<String> mWord = this.goiService.getJPWordMeaning(decodedGoi);
+        boolean isCorrect = false;
+        for (String ele : mWord) {
+            if(ele.equalsIgnoreCase(kaitou)){
+                meaning.put("meaningResult","○");
+                isCorrect = true;
+                break;
+            }
+        }
         meaning.put("word",decodedGoi);
-        meaning.put("meaningResult",mWord.equalsIgnoreCase(kaitou) ? "○":"×");
+        if(!isCorrect){
+            meaning.put("meaningResult","×");
+        }
         return meaning;
     }
 
