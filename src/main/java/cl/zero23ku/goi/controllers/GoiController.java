@@ -17,11 +17,11 @@ public class GoiController{
         return word;
     }
 
-    @GetMapping("/goi/{word}")
-    public Map<String,String> checkMeaning(@PathVariable String word){
+    @GetMapping("/goi/{goi}/kaitou/{kaitou}")
+    public Map<String,String> checkMeaning(@PathVariable String goi, @PathVariable String kaitou){
         Map<String,String> meaning = new HashMap<>();
-        meaning.put("word",word);
-        meaning.put("meaningResult","Ayyyy".equalsIgnoreCase(word) ? "FFFFFFF":"ZZZZZZ");
+        meaning.put("word",goi);
+        meaning.put("meaningResult","Ayyyy".equalsIgnoreCase(kaitou) ? "○":"×");
         return meaning;
     }
 

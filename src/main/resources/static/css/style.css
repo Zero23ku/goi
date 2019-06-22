@@ -3,3 +3,15 @@ body{
     color: #FFFFFF;
     font-size:13px;
 }
+
+.footer{
+    padding-bottom: 1rem !important;
+}
+
+.is-invalid{
+    border-width: thick;
+}
+
+#buttonContainer{
+    text-align: center;
+}
