@@ -48,7 +48,7 @@ $("#send").click((e) => {
             if(data.meaningResult === "×"){
                 msg = "La(s) respuesta(s) correcta(s): "
                 $.each(data.answers.split("-"), (i,v) => {
-                    msg += v + " ";
+                    msg += v + ", ";
                 });
                 try{
                     $batsu.play();
