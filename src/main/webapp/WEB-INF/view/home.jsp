@@ -17,7 +17,6 @@
     <audio id="batsu">
         <source src="sounds/batsu.mp3" type="audio/mpeg">
     </audio>
-
     <!--Input-->
     <main class="site-content">
         <div class="container">
@@ -61,6 +60,7 @@
    
     <footer class="footer">
         <div class="container text-center">
+            <span class="text-footer">¿Encontraste algún error? Escríbeme: <a href="mailto:goi@zero23ku.dev">goi@zero23ku.dev</a></span><br>
             <span class="text-footer">Creado por <a href="https://github.com/zero23ku">Zero23ku</a></span>
         </div>
     </footer>

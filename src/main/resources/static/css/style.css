@@ -41,3 +41,15 @@ ol li{
     display:none;
 }
 
+.float-button {
+    position: fixed;
+    right: -77px;
+    top: 270px;
+    transition: all 0.2s ease-in 0s;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.float-button:hover {
+    right: -7px;
+    }
